@@ -76,5 +76,24 @@ public class LoverInfoController {
 		
 //		System.out.println(height);
 	}
+	
+	@RequestMapping(value="/love/saveAdvanceField", method=RequestMethod.POST)
+	public void saveAdvanceField(Lover lover){
+		if(lover != null) {
+			System.out.println(lover.toString());
+			System.out.println(lover.getLikeAndHateList().getHate_drinkList().toString());
+			System.out.println(lover.getLikeAndHateList().getHate_drinkList()[0]);
+		}
+		else {
+			System.out.println("lover is null!!");
+		}
+		
+	}
 
 }
+
+
+
+
+
+

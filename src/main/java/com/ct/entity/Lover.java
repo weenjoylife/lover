@@ -11,6 +11,7 @@ public class Lover {
 	private float weight;
 	private float[] size;
 	private String location;
+	private LikeAndHateList likeAndHateList;
 	
 	private String[] goalList;
 	
@@ -22,7 +23,7 @@ public class Lover {
 		this.goalList = goalList;
 	}
 
-	private LikeAndHateList likeAndHateList;
+	
 
 	public Lover() {
 		super();
