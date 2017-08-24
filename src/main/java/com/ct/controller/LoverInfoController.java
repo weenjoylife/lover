@@ -83,6 +83,8 @@ public class LoverInfoController {
 			System.out.println(lover.toString());
 			System.out.println(lover.getLikeAndHateList().getHate_drinkList().toString());
 			System.out.println(lover.getLikeAndHateList().getHate_drinkList()[0]);
+			System.out.println(lover.getLikeAndHateList().getHate_drinkList()[1]);
+			System.out.println(lover.toString());
 		}
 		else {
 			System.out.println("lover is null!!");

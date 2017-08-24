@@ -1,5 +1,6 @@
 package com.ct.entity;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Lover {
@@ -93,7 +94,12 @@ public class Lover {
 		this.likeAndHateList = likeAndHateList;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Lover [id=" + id + ", name=" + name + ", birthday=" + birthday + ", height=" + height + ", weight="
+				+ weight + ", size=" + Arrays.toString(size) + ", location=" + location + ", likeAndHateList="
+				+ Arrays.toString(likeAndHateList.getHate_drinkList()) + " xxx" +Arrays.toString(likeAndHateList.getHate_funList()) + ", goalList=" + Arrays.toString(goalList) + "]";
+	}
 	
 	
 
