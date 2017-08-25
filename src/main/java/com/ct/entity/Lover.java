@@ -1,7 +1,6 @@
 package com.ct.entity;
 
 import java.util.Arrays;
-import java.util.Date;
 
 public class Lover {
 	
