@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ordernamespace">
+
+	<resultMap type="com.ct.test.Order" id="orderMap">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<collection property="productList" resultMap="productnamespace.productMap"></collection>
+	</resultMap>
+	
+	<select id="selectAllOrderAndProductById" parameterType="int" resultMap="orderMap">
+		select o.oid,o.oname,p.pid as pid,p.pname as pname
+		from t_order o,t_product p
+		where o.oid = p.poid
+		and o.oid = #{oid}
+	</select>
+	
+</mapper>
+
+
