@@ -24,7 +24,7 @@ public class LoverInfoController {
 		lover.setId(1);
 		lover.setHeight(163);
 		lover.setName("zyx");
-		lover.setSize(new float[] {36,32,32});
+		lover.setSize(new String("32,32,32"));
 		lover.setWeight(50);
 		lover.setLocation("湘潭");
 		
@@ -52,7 +52,7 @@ public class LoverInfoController {
 		String[] hate_funList = {"恨fun","排骨"};
 		likeAndHateList.setHate_funList(hate_funList);
 		
-		String[] goalList = new String[] {"环游世界","住在海边"};
+		String goalList = new String("环游世界,住在海边");
 		lover.setGoalList(goalList);
 		
 		lover.setLikeAndHateList(likeAndHateList);
@@ -67,12 +67,13 @@ public class LoverInfoController {
 		System.out.println("体重: " + lover.getWeight());
 		System.out.println("身高: " + lover.getHeight());
 		System.out.println("生产地: " + lover.getLocation());
-		float xw = lover.getSize()[0];
-		float yw = lover.getSize()[1];
-		float tw = lover.getSize()[2];
-		System.out.println("胸围: " + xw);
-		System.out.println("腰围: " + yw);
-		System.out.println("臀围: " + tw);
+//		float xw = lover.getSize()[0];
+//		float yw = lover.getSize()[1];
+//		float tw = lover.getSize()[2];
+//		
+//		System.out.println("胸围: " + xw);
+//		System.out.println("腰围: " + yw);
+//		System.out.println("臀围: " + tw);
 		
 //		System.out.println(height);
 	}

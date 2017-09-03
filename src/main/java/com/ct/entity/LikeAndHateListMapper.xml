@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="likeAndHateListnamespace">
+
+	<resultMap type="com.ct.entity.LikeAndHateList" id="likeAndHateListMap">
+		<id column="lahId" property="id"/>
+		<result column="like_eatList" property="like_eatList"/>
+		<result column="like_drinkList" property="like_drinkList"/>
+		<result column="like_playList" property="like_playList"/>
+		<result column="like_funList" property="like_funList"/>
+		<result column="hate_eatList" property="hate_eatList"/>
+		<result column="hate_drinkList" property="hate_drinkList"/>
+		<result column="hate_playList" property="hate_playList"/>
+		<result column="hate_funList" property="hate_funList"/>
+	</resultMap>
+	
+	<insert id="addLikeAndHateListByLoverId" parameterType="com.ct.entity.LikeAndHateList">
+		insert into likeAndHate values(#{id}, #{like_eatList}, #{like_drinkList}, #{like_playList}, 
+		#{like_funList}, #{hate_eatList}, #{hate_drinkList}, #{hate_playList}, #{hate_funList}, #{});
+		insert into likeAndHate(loverId) values
+	</insert>
+	
+</mapper>
+
+

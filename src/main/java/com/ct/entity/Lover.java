@@ -4,22 +4,25 @@ import java.util.Arrays;
 
 public class Lover {
 	
-	private long id;
+	private int id;
 	private String name;
 	private String birthday;
 	private int height;
 	private float weight;
-	private float[] size;
+//	private float[] size;
+	private String size;
 	private String location;
 	private LikeAndHateList likeAndHateList;
 	
-	private String[] goalList;
+//	private String[] goalList;
+	private String goalList;
 	
-	public String[] getGoalList() {
+	
+	public String getGoalList() {
 		return goalList;
 	}
 
-	public void setGoalList(String[] goalList) {
+	public void setGoalList(String goalList) {
 		this.goalList = goalList;
 	}
 
@@ -33,7 +36,7 @@ public class Lover {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -69,13 +72,13 @@ public class Lover {
 		this.weight = weight;
 	}
 
-	public float[] getSize() {
-		return size;
-	}
-
-	public void setSize(float[] size) {
-		this.size = size;
-	}
+//	public float[] getSize() {
+//		return size;
+//	}
+//
+//	public void setSize(float[] size) {
+//		this.size = size;
+//	}
 
 	public String getLocation() {
 		return location;
@@ -96,8 +99,16 @@ public class Lover {
 	@Override
 	public String toString() {
 		return "Lover [id=" + id + ", name=" + name + ", birthday=" + birthday + ", height=" + height + ", weight="
-				+ weight + ", size=" + Arrays.toString(size) + ", location=" + location + ", likeAndHateList="
-				+ Arrays.toString(likeAndHateList.getHate_drinkList()) + " xxx" +Arrays.toString(likeAndHateList.getHate_funList()) + ", goalList=" + Arrays.toString(goalList) + "]";
+				+ weight + ", size=" + size + ", location=" + location + ", likeAndHateList="
+				+ Arrays.toString(likeAndHateList.getHate_drinkList()) + " xxx" +Arrays.toString(likeAndHateList.getHate_funList()) + ", goalList=" + goalList + "]";
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
 	}
 	
 	

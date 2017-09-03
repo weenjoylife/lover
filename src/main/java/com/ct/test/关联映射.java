@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.ct.util.MyBatisUtil;
+
 public class 关联映射 {
 	
 	/**

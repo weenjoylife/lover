@@ -1,4 +1,4 @@
-package com.ct.test;
+package com.ct.util;
 
 import java.io.IOException;
 import java.io.Reader;

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lovernamespace">
+
+<!-- 	<resultMap type="com.ct.entity.Lover" id="loverMap"> -->
+<!-- 		<id column="loverId" property="id"/> -->
+<!-- 		<result column="name" property="name"/> -->
+<!-- 		<result column="birthday" property="birthday"/> -->
+<!-- 		<result column="height" property="height"/> -->
+<!-- 		<result column="weight" property="weight"/> -->
+<!-- 		<result column="size" property="size"/> -->
+<!-- 		<result column="location" property="location"/> -->
+<!-- 		<result column="goalList" property="goalList"/> -->
+<!-- 		<association property="likeAndHateList" resultMap="likeAndHateListnamespace.likeAndHateListMap"> -->
+<!-- 		</association>	 -->
+<!-- 	</resultMap> -->
+	
+	<insert id="addLover" parameterType="com.ct.entity.Lover">
+		insert into lover values(#{id}, #{name}, #{birthday}, #{height}, #{weight}, #{size}, #{location}, #{goalList})
+	</insert>
+	
+</mapper>
+
+

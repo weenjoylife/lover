@@ -2,6 +2,8 @@ package com.ct.entity;
 
 public class LikeAndHateList {
 	
+	private int id;
+	
 	private String[] like_eatList;
 	private String[] like_drinkList;
 	private String[] like_playList;
@@ -12,6 +14,12 @@ public class LikeAndHateList {
 	private String[] hate_playList;
 	private String[] hate_funList;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String[] getLike_eatList() {
 		return like_eatList;
 	}
