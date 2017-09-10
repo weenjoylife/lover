@@ -28,6 +28,7 @@
 		<mapper resource="com/ct/test/ProductMapper.xml"/>
 		
 		<mapper resource="com/ct/entity/LoverMapper.xml"/>
+		<mapper resource="com/ct/entity/LikeAndHateListMapper.xml"/>
 	</mappers>
 </configuration>
 

@@ -32,7 +32,7 @@ public class Lover {
 		super();
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -100,7 +100,7 @@ public class Lover {
 	public String toString() {
 		return "Lover [id=" + id + ", name=" + name + ", birthday=" + birthday + ", height=" + height + ", weight="
 				+ weight + ", size=" + size + ", location=" + location + ", likeAndHateList="
-				+ Arrays.toString(likeAndHateList.getHate_drinkList()) + " xxx" +Arrays.toString(likeAndHateList.getHate_funList()) + ", goalList=" + goalList + "]";
+				 + ", goalList=" + goalList + "]";
 	}
 
 	public String getSize() {

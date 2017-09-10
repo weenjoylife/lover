@@ -14,13 +14,28 @@
 		<result column="hate_drinkList" property="hate_drinkList"/>
 		<result column="hate_playList" property="hate_playList"/>
 		<result column="hate_funList" property="hate_funList"/>
+		
 	</resultMap>
 	
-	<insert id="addLikeAndHateListByLoverId" parameterType="com.ct.entity.LikeAndHateList">
-		insert into likeAndHate values(#{id}, #{like_eatList}, #{like_drinkList}, #{like_playList}, 
-		#{like_funList}, #{hate_eatList}, #{hate_drinkList}, #{hate_playList}, #{hate_funList}, #{});
-		insert into likeAndHate(loverId) values
+	<insert id="addLikeAndHateList" parameterType="com.ct.entity.LikeAndHateList">
+		insert into likeAndHate(lahId,like_eatList,like_drinkList,like_playList,like_funList,hate_eatList,hate_drinkList,hate_playList,hate_funList,fk_loverId) 
+		values(#{id}, #{like_eatList}, #{like_drinkList}, #{like_playList}, 
+		#{like_funList}, #{hate_eatList}, #{hate_drinkList}, #{hate_playList}, #{hate_funList}, #{LoverId})
 	</insert>
+	
+<!-- 	<select id="selectlikeAndHateList" parameterType="com.ct.entity.lover" resultMap="likeAndHateListMap"> -->
+<!-- 		select a.like_eatList,a.like_drinkList,a.like_playList,a.like_funList,a.hate_eatList,a.hate_drinkList,a.hate_playList,a.hate_funList, -->
+<!-- 		b.loverId,b.name,b.birthday,b.height,b.weight,b.size,b.location,b.goalList -->
+<!-- 		from LikeAndHate a join lover b -->
+<!-- 		where a.loverid = b.loverId -->
+<!-- 		and b.loverId = #{id} -->
+<!-- 	</select> -->
+
+	<update id="updateLoverAdvanceField" parameterType="com.ct.entity.LikeAndHateList">
+		update LikeAndHate set like_eatList=#{like_eatList}, like_drinkList=#{like_drinkList}, like_playList=#{like_playList}, 
+		like_funList=#{like_funList}, hate_eatList=#{hate_eatList}, hate_drinkList=#{hate_drinkList}, 
+		hate_playList=#{hate_playList}, hate_funList=#{hate_funList} where lahId=#{id}
+	</update>
 	
 </mapper>
 

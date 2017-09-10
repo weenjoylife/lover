@@ -4,22 +4,43 @@
 
 <mapper namespace="lovernamespace">
 
-<!-- 	<resultMap type="com.ct.entity.Lover" id="loverMap"> -->
-<!-- 		<id column="loverId" property="id"/> -->
-<!-- 		<result column="name" property="name"/> -->
-<!-- 		<result column="birthday" property="birthday"/> -->
-<!-- 		<result column="height" property="height"/> -->
-<!-- 		<result column="weight" property="weight"/> -->
-<!-- 		<result column="size" property="size"/> -->
-<!-- 		<result column="location" property="location"/> -->
-<!-- 		<result column="goalList" property="goalList"/> -->
-<!-- 		<association property="likeAndHateList" resultMap="likeAndHateListnamespace.likeAndHateListMap"> -->
-<!-- 		</association>	 -->
-<!-- 	</resultMap> -->
+	<resultMap type="com.ct.entity.Lover" id="loverMap">
+		<id column="loverId" property="id"/>
+		<result column="name" property="name"/>
+		<result column="birthday" property="birthday"/>
+		<result column="height" property="height"/>
+		<result column="weight" property="weight"/>
+		<result column="size" property="size"/>
+		<result column="location" property="location"/>
+		<result column="goalList" property="goalList"/>
+		<collection property="likeAndHateList" resultMap="likeAndHateListnamespace.likeAndHateListMap">
+		</collection>
+	</resultMap>
 	
+<!-- 	<insert id="addLover" parameterType="com.ct.entity.Lover"> -->
+<!-- 		insert into lover values(=#{id}, =#{name}, =#{birthday}, =#{height}, =#{weight}, =#{size}, =#{location}, =#{goalList}) -->
+<!-- 	</insert> -->
+	
+<!-- 	<select id="selectLoverWithoutLikeAndHateList" parameterType="int" resultMap="loverMap"> -->
+<!-- 		select * from lover where loverId = =#{id} -->
+<!-- 	</select> -->
+
 	<insert id="addLover" parameterType="com.ct.entity.Lover">
-		insert into lover values(#{id}, #{name}, #{birthday}, #{height}, #{weight}, #{size}, #{location}, #{goalList})
+		insert into lover values(#{id}, #{name}, #{birthday}, #{height}, #{weight}, #{size}, #{location}, #{goalList} )
 	</insert>
+	
+	<select id="selectLoverWithLikeAndHateList" parameterType="int" resultMap="loverMap">
+		select a.lahid,a.like_eatList,a.like_drinkList,a.like_playList,a.like_funList,a.hate_eatList,a.hate_drinkList,a.hate_playList,a.hate_funList,
+		b.loverId,b.name,b.birthday,b.height,b.weight,b.size,b.location,b.goalList
+		from LikeAndHate a join lover b
+		where a.fk_loverid = b.loverId
+		and b.loverId = #{id}
+	</select>
+	
+	<update id="updateLoverBasicField" parameterType="com.ct.entity.Lover">
+		update lover set  birthday=#{birthday}, height=#{height}, weight=#{weight}, size=#{size}, 
+		location=#{location} where loverId=#{id}
+	</update>
 	
 </mapper>
 
